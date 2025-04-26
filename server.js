@@ -35,6 +35,10 @@ app.use("/api/doctors", require("./routes/doctorRoutes"));
 app.use("/api/patients", require("./routes/patientRoutes"));
 app.use("/api/appointments", require("./routes/appointmentRoutes"));
 
+app.get("/", (req,res) => {
+  res.status(200).json({status: "All APIs Working!!!"});
+})
+
 // Health Check Endpoint
 app.get("/health", (req, res) => {
   res.status(200).json({
